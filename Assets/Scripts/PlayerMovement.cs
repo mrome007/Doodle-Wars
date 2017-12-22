@@ -10,8 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform rightConstraint;
 
+    [SerializeField]
+    private Transform playerTransform;
+
     private Vector2 movementVector;
     private Vector2 clampedPosition;
+    private Vector3 rotationVector;
     private float minX;
     private float minY;
     private float maxX;
@@ -21,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementVector = Vector2.zero;
         clampedPosition = Vector2.zero;
+        rotationVector = Vector3.zero;
     }
 
 	private void Update()
@@ -29,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         movementVector.x = h;
         transform.Translate(movementVector * Time.deltaTime * 10f);
         ClampMovement();
+        RotatePlayer(h);
     }
 
     private void ClampMovement()
@@ -45,5 +51,14 @@ public class PlayerMovement : MonoBehaviour
         clampedPosition.y = y;
 
         transform.position = clampedPosition;
+    }
+
+    private void RotatePlayer(float horizontal)
+    {
+        if(horizontal != 0)
+        {
+            rotationVector.y = horizontal > 0f ? 180f : 0f;
+            playerTransform.localRotation = Quaternion.Euler(rotationVector);
+        }
     }
 }
