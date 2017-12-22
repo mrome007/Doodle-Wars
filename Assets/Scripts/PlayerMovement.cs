@@ -20,17 +20,24 @@ public class PlayerMovement : MonoBehaviour
     private float minY;
     private float maxX;
     private float maxY;
+    private bool isJumping;
+    private float jumpAcceleration = 9.8f;
 
     private void Awake()
     {
         movementVector = Vector2.zero;
         clampedPosition = Vector2.zero;
         rotationVector = Vector3.zero;
+        isJumping = false;
     }
 
 	private void Update()
 	{
         var h = Input.GetAxis("Horizontal");
+        if(Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            PlayerJump();
+        }
         movementVector.x = h;
         transform.Translate(movementVector * Time.deltaTime * 10f);
         ClampMovement();
@@ -61,4 +68,28 @@ public class PlayerMovement : MonoBehaviour
             playerTransform.localRotation = Quaternion.Euler(rotationVector);
         }
     }
+
+    private void PlayerJump()
+    {
+        StartCoroutine(JumpRoutine());
+    }
+
+    private IEnumerator JumpRoutine()
+    {
+        isJumping = true;
+        while(transform.position.y < 2f)
+        {
+            movementVector.y = movementVector.y + jumpAcceleration * Time.deltaTime;
+            yield return null;
+        }
+
+        while(transform.position.y > 0f)
+        {
+            movementVector.y = movementVector.y - jumpAcceleration * Time.deltaTime;
+            yield return null;
+        }
+
+        isJumping = false;
+    }
+
 }
