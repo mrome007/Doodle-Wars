@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour 
 {
     [SerializeField]
+    private float speed;
+
+    [SerializeField]
     private Transform leftConstraint;
 
     [SerializeField]
@@ -21,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private float maxX;
     private float maxY;
     private bool isJumping;
-    private float jumpAcceleration = 9.8f;
+    private float jumpAcceleration = 4.4f;
 
     private void Awake()
     {
@@ -39,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             PlayerJump();
         }
         movementVector.x = h;
-        transform.Translate(movementVector * Time.deltaTime * 10f);
+        transform.Translate(movementVector * Time.deltaTime * speed);
         ClampMovement();
         RotatePlayer(h);
     }
@@ -76,13 +79,14 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator JumpRoutine()
     {
+        movementVector.y = 0.5f;
         isJumping = true;
         while(transform.position.y < 2f)
         {
             movementVector.y = movementVector.y + jumpAcceleration * Time.deltaTime;
             yield return null;
         }
-
+        movementVector.y = 1.5f;
         while(transform.position.y > 0f)
         {
             movementVector.y = movementVector.y - jumpAcceleration * Time.deltaTime;
