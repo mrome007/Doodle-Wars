@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef1731c28b314ce496dfdf9bf7904ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 6
   leftConstraint: {fileID: 0}
   rightConstraint: {fileID: 0}
   playerTransform: {fileID: 4258054911947064}
