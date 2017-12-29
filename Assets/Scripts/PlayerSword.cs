@@ -27,6 +27,7 @@ public class PlayerSword : MonoBehaviour
     {
         IsSwinging = true;
         swordCollider.enabled = true;
+
         while(transform.localRotation.eulerAngles.z < 100f)
         {
             transform.Rotate(Vector3.forward * Time.deltaTime * swingSpeed);
@@ -38,7 +39,16 @@ public class PlayerSword : MonoBehaviour
             transform.Rotate(Vector3.back * Time.deltaTime * swingSpeed);
             yield return null;
         }
+
         IsSwinging = false;
         swordCollider.enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
