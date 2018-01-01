@@ -17,6 +17,9 @@ public class LevelProgression : MonoBehaviour
     [SerializeField]
     private Transform playerTransform;
 
+    [SerializeField]
+    private GoIndicator indicator;
+
     private int currentWave = 0;
     private Coroutine moveleftConstraintCoroutine = null;
     private Vector3 currentLeftConstraint;
@@ -67,11 +70,12 @@ public class LevelProgression : MonoBehaviour
 
     private IEnumerator MoveLeftConstraintRoutine()
     {
+        indicator.ShowIndicator(true);
         while(playerTransform.position.x < currentLeftConstraint.x)
         {
             yield return null;
         }
-
+        indicator.ShowIndicator(false);
         leftWorldConstraint.position = currentLeftConstraint;
     }
 
