@@ -14,10 +14,16 @@ public class LevelProgression : MonoBehaviour
     [SerializeField]
     private Transform rightWorldConstraint;
 
+    [SerializeField]
+    private Transform playerTransform;
+
     private int currentWave = 0;
+    private Coroutine moveleftConstraintCoroutine = null;
+    private Vector3 currentLeftConstraint;
 
     private void Start()
     {
+        currentLeftConstraint = Vector3.zero;
         StartCurrentWave();
     }
 
@@ -38,6 +44,8 @@ public class LevelProgression : MonoBehaviour
         }
 
         rightWorldConstraint.position = levelWaves[currentWave].RightBorder.position;
+        currentLeftConstraint = levelWaves[currentWave].LeftBorder.position;
+        MoveLeftConstraint();
         StartCurrentWave();
     }
 
@@ -50,7 +58,30 @@ public class LevelProgression : MonoBehaviour
 
     private void OnDestroy()
     {
-        levelWaves[currentWave].WaveBegin -= HandleWaveBegin;
-        levelWaves[currentWave].WaveEnd -= HandleWaveEnd;
+        for(int index = 0; index < levelWaves.Count; index++)
+        {
+            levelWaves[index].WaveBegin -= HandleWaveBegin;
+            levelWaves[index].WaveEnd -= HandleWaveEnd;
+        }
+    }
+
+    private IEnumerator MoveLeftConstraintRoutine()
+    {
+        while(playerTransform.position.x < currentLeftConstraint.x)
+        {
+            yield return null;
+        }
+
+        leftWorldConstraint.position = currentLeftConstraint;
+    }
+
+    private void MoveLeftConstraint()
+    {
+        if(moveleftConstraintCoroutine != null)
+        {
+            StopCoroutine(moveleftConstraintCoroutine);
+        }
+
+        moveleftConstraintCoroutine = StartCoroutine(MoveLeftConstraintRoutine());
     }
 }

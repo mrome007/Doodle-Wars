@@ -650,6 +650,7 @@ MonoBehaviour:
   - {fileID: 1397551960}
   leftWorldConstraint: {fileID: 2092134036}
   rightWorldConstraint: {fileID: 964147691}
+  playerTransform: {fileID: 849984541}
 --- !u!114 &847152605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,6 +665,11 @@ MonoBehaviour:
   enemyObjects:
   - {fileID: 114673268780822130, guid: 3dc7cef8cd78947e2886a210218ad45e, type: 2}
   - {fileID: 114960129376027474, guid: dc4320f50d7e84dcc8a30974c4581e08, type: 2}
+--- !u!4 &849984541 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4076204180009970, guid: 371b7813985ce42f5acc4721f1c157c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 784403789}
 --- !u!1 &917024132
 GameObject:
   m_ObjectHideFlags: 0
