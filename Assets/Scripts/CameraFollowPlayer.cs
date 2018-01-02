@@ -37,8 +37,11 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void ClampFollow()
     {
-        minX = leftWorldConstraint.position.x + constraintOffset;
-        maxX = rightWorldConstraint.position.x - constraintOffset;
+        var realConstraintOffset = (rightWorldConstraint.position.x - leftWorldConstraint.position.x) / 2f;
+        var offset = realConstraintOffset < constraintOffset ? realConstraintOffset : constraintOffset;
+
+        minX = leftWorldConstraint.position.x + offset;
+        maxX = rightWorldConstraint.position.x - offset;
 
         targetVector.x = Mathf.Clamp(targetVector.x, minX, maxX);
     }
