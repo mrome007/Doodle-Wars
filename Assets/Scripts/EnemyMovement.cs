@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour 
 {
+    public bool Move;
+
     [SerializeField]
     private float speed;
 
@@ -17,21 +19,22 @@ public class EnemyMovement : MonoBehaviour
         enemyRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         offset = Random.Range(0.1f, 0.3f);
         negOffset *= -1f;
-        delayMovement = Random.Range(0f, 1.5f); 
+        delayMovement = Random.Range(0f, 1.5f);
+        Move = false;
+        Invoke("DelayMove", delayMovement);
     }
 
     private void Update()
     {
-        if(delayMovement > 0)
+        if(!Move)
         {
-            delayMovement -= Time.deltaTime;
             return;
         }
        
-        Move();
+        MoveEnemy();
     }
 
-    private void Move()
+    private void MoveEnemy()
     {
         var playerDir = PlayerInfo.Instance.transform.position.x - transform.position.x;
         var movementDirection = Vector2.zero;
@@ -48,5 +51,10 @@ public class EnemyMovement : MonoBehaviour
         }
 
         transform.Translate(movementDirection * speed * Time.deltaTime);
+    }
+
+    private void DelayMove()
+    {
+        Move = true;
     }
 }

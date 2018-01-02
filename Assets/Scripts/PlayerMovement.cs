@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementVector.y = 0.5f;
         isJumping = true;
-        while(transform.position.y < 2f)
+        while(transform.position.y < 1.5f)
         {
             movementVector.y = movementVector.y + jumpAcceleration * Time.deltaTime;
             yield return null;

@@ -6,6 +6,9 @@ public class PlayerSword : MonoBehaviour
 {
     [SerializeField]
     private float swingSpeed;
+
+    [SerializeField]
+    private float damage;
     
     public bool IsSwinging { get; private set; }
 
@@ -34,6 +37,8 @@ public class PlayerSword : MonoBehaviour
             yield return null;
         }
 
+        swordCollider.enabled = false;
+
         while(transform.localRotation.eulerAngles.z > 30f)
         {
             transform.Rotate(Vector3.back * Time.deltaTime * swingSpeed);
@@ -41,14 +46,14 @@ public class PlayerSword : MonoBehaviour
         }
 
         IsSwinging = false;
-        swordCollider.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")
         {
-            Destroy(other.gameObject);
+            var enemy = other.GetComponent<Enemy>();
+            enemy.ApplyDamage(damage);
         }
     }
 }

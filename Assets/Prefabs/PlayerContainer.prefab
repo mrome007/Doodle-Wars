@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingSpeed: 200
+  damage: 20
 --- !u!114 &114184487007387710
 MonoBehaviour:
   m_ObjectHideFlags: 1

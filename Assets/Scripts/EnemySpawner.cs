@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private List<Enemy> enemyObjects;
 
-    private float spawnPosOffset = 10f;
+    private float spawnPosOffset = 12f;
 
     private void Awake()
     {
