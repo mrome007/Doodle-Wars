@@ -54,11 +54,13 @@
      <Compile Include="Assets\Scripts\CameraFollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyDestroyedEventArgs.cs" />
+     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\GoIndicator.cs" />
      <Compile Include="Assets\Scripts\LevelProgression.cs" />
      <Compile Include="Assets\Scripts\LevelWave.cs" />
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
+     <Compile Include="Assets\Scripts\PlayerInfo.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerSword.cs" />
      <Compile Include="Assets\Scripts\PlayGame.cs" />

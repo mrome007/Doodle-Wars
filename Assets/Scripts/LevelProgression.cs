@@ -49,7 +49,6 @@ public class LevelProgression : MonoBehaviour
         rightWorldConstraint.position = levelWaves[currentWave].RightBorder.position;
         currentLeftConstraint = levelWaves[currentWave].LeftBorder.position;
         MoveLeftConstraint();
-        StartCurrentWave();
     }
 
     private void StartCurrentWave()
@@ -77,6 +76,8 @@ public class LevelProgression : MonoBehaviour
         }
         indicator.ShowIndicator(false);
         leftWorldConstraint.position = currentLeftConstraint;
+
+        StartCurrentWave();
     }
 
     private void MoveLeftConstraint()

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4881428565927518}
   - component: {fileID: 114673268780822130}
   - component: {fileID: 58025528315895288}
+  - component: {fileID: 114060041130751672}
   m_Layer: 0
   m_Name: HairyEnemy
   m_TagString: Enemy
@@ -86,6 +87,18 @@ CircleCollider2D:
   m_Offset: {x: 0.1, y: -0.2}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &114060041130751672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1675051262273736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9478af5b657c24c928b1d33a094e2d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
 --- !u!114 &114673268780822130
 MonoBehaviour:
   m_ObjectHideFlags: 1

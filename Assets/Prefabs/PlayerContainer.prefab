@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 4076204180009970}
   - component: {fileID: 114184487007387710}
   - component: {fileID: 114612090568120880}
+  - component: {fileID: 114801687778494574}
   m_Layer: 0
   m_Name: PlayerContainer
   m_TagString: Untagged
@@ -162,7 +163,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.3, y: 1.4}
@@ -217,6 +218,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSword: {fileID: 114170196734741544}
+--- !u!114 &114801687778494574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832635161458888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a978f768572254d10984c8d21c95b1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212494341033749320
 SpriteRenderer:
   m_ObjectHideFlags: 1
