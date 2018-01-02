@@ -10,15 +10,24 @@ public class EnemyMovement : MonoBehaviour
     private SpriteRenderer enemyRenderer;
     private float offset;
     private float negOffset;
+    private float delayMovement;
+
     private void Awake()
     {
         enemyRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         offset = Random.Range(0.1f, 0.3f);
         negOffset *= -1f;
+        delayMovement = Random.Range(0f, 1.5f); 
     }
 
     private void Update()
     {
+        if(delayMovement > 0)
+        {
+            delayMovement -= Time.deltaTime;
+            return;
+        }
+       
         Move();
     }
 
