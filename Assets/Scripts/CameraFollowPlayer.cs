@@ -5,9 +5,6 @@ using UnityEngine;
 public class CameraFollowPlayer : MonoBehaviour 
 {
     [SerializeField]
-    private Transform playerTransform;
-
-    [SerializeField]
     private Transform leftWorldConstraint;
 
     [SerializeField]
@@ -30,7 +27,7 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void Update()
     {
-        targetVector.x = playerTransform.position.x;
+        targetVector.x = PlayerInfo.Instance.transform.position.x;
         ClampFollow();
         transform.position = Vector3.MoveTowards(transform.position, targetVector, speed * Time.deltaTime);
     }

@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerSword : MonoBehaviour 
 {
     [SerializeField]
-    private float swingSpeed;
+    private float damage;
 
     [SerializeField]
-    private float damage;
+    private Animator playerAnimator;
+
+    [SerializeField]
+    private string swingTrigger;
     
     public bool IsSwinging { get; private set; }
 
@@ -23,29 +26,7 @@ public class PlayerSword : MonoBehaviour
 
     public void SwingSword()
     {
-        StartCoroutine(SwingSwordRoutine());
-    }
-
-    private IEnumerator SwingSwordRoutine()
-    {
-        IsSwinging = true;
-        swordCollider.enabled = true;
-
-        while(transform.localRotation.eulerAngles.z < 100f)
-        {
-            transform.Rotate(Vector3.forward * Time.deltaTime * swingSpeed);
-            yield return null;
-        }
-
-        swordCollider.enabled = false;
-
-        while(transform.localRotation.eulerAngles.z > 30f)
-        {
-            transform.Rotate(Vector3.back * Time.deltaTime * swingSpeed);
-            yield return null;
-        }
-
-        IsSwinging = false;
+        playerAnimator.SetTrigger(swingTrigger);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -55,5 +36,15 @@ public class PlayerSword : MonoBehaviour
             var enemy = other.GetComponent<Enemy>();
             enemy.ApplyDamage(damage);
         }
+    }
+
+    public void EnableSwordCollider(bool enable)
+    {
+        swordCollider.enabled = enable;
+    }
+
+    public void SetIsSwordSwinging(bool swing)
+    {
+        IsSwinging = swing;
     }
 }

@@ -5,16 +5,26 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour 
 {
     [SerializeField]
-    private PlayerSword playerSword;
+    private PlayerSword heavySword;
     
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.J))
         {
-            if(!playerSword.IsSwinging)
+            if(!heavySword.IsSwinging)
             {
-                playerSword.SwingSword();
+                heavySword.SwingSword();
             }
         }
+    }
+
+    public void SetHeavySwordIsSwinging(int swing)
+    {
+        heavySword.SetIsSwordSwinging(swing == 1);
+    }
+
+    public void EnableHeavySwordCollider(int enable)
+    {
+        heavySword.EnableSwordCollider(enable == 1);
     }
 }

@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(horizontal != 0)
         {
-            rotationVector.y = horizontal > 0f ? 180f : 0f;
+            rotationVector.y = horizontal > 0f ? 0f : 180f;
             playerTransform.localRotation = Quaternion.Euler(rotationVector);
         }
     }
