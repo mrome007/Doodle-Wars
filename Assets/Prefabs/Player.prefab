@@ -81,6 +81,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4926280134464742}
+  - component: {fileID: 61358134261731200}
+  - component: {fileID: 50773406072079450}
+  - component: {fileID: 114261363203864814}
   m_Layer: 0
   m_Name: LightSword
   m_TagString: Untagged
@@ -567,6 +570,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50773406072079450
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239749293006466}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &61358134261731200
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239749293006466}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.65}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 2}
+  m_EdgeRadius: 0
 --- !u!61 &61942618617569060
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -620,6 +668,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a978f768572254d10984c8d21c95b1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114261363203864814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239749293006466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c043d77d8d5144b3be5cf66035ceebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  playerAnimator: {fileID: 95564334856661206}
+  swingTrigger: Light
 --- !u!114 &114619655408606696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -632,6 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavySword: {fileID: 114819201626227838}
+  lightSword: {fileID: 114261363203864814}
 --- !u!114 &114819201626227838
 MonoBehaviour:
   m_ObjectHideFlags: 1
