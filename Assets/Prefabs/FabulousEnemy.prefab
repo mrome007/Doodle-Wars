@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4276923333821056}
   m_Layer: 0
-  m_Name: FabulousEnemyContainer
+  m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4576684696944504}
   - component: {fileID: 212152702606331416}
   m_Layer: 0
-  m_Name: FabulousEnemyOk
+  m_Name: Ok
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4592066598507216}
   - component: {fileID: 212439435753544126}
   m_Layer: 0
-  m_Name: FabulousEnemyNotOk
+  m_Name: NotOk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 114170907795190432}
   - component: {fileID: 114246386997778312}
   - component: {fileID: 70429388672851494}
+  - component: {fileID: 95722325706671760}
   m_Layer: 0
   m_Name: FabulousEnemy
   m_TagString: Enemy
@@ -146,6 +147,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0.06, y: 0}
   m_Size: {x: 0.85, y: 1.5}
   m_Direction: 0
+--- !u!95 &95722325706671760
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788840613037522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6cd37b7ba5f741c3a40309dfc9a9506, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114170907795190432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,7 +240,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482830379571182}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

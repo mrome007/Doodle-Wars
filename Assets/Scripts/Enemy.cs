@@ -17,11 +17,13 @@ public class Enemy : MonoBehaviour
 
     private EnemyMovement enemyMovement;
     private Collider2D enemyCollider;
+    private Animator enemyAnimator;
 
     private void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>();
         enemyCollider = GetComponent<Collider2D>();
+        enemyAnimator = GetComponent<Animator>();
     }
 
     private void OnDestroy()
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour
     {
         enemyMovement.Move = false;
         enemyCollider.enabled = false;
+        enemyAnimator.SetTrigger("Hit");
         for(int index = 0; index < invulnerableFrames; index++)
         {
             yield return null;
