@@ -682,8 +682,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyObjects:
-  - {fileID: 114673268780822130, guid: 3dc7cef8cd78947e2886a210218ad45e, type: 2}
-  - {fileID: 114960129376027474, guid: dc4320f50d7e84dcc8a30974c4581e08, type: 2}
+  - {fileID: 114190409567757000, guid: 742e8a60094e741c390deb3a578818db, type: 2}
+  - {fileID: 114896318972587454, guid: bb05b3dd4cbe14d099038e45aaf2cb86, type: 2}
+  - {fileID: 114170907795190432, guid: c8dc8ff3ded874a9582e71f67a6cf223, type: 2}
+  - {fileID: 114955471842165220, guid: f1a8f7f226a7f477c905364fd02a6b2f, type: 2}
+  - {fileID: 114952436077448198, guid: 4b9299df0ebd84e1385b8f6e21d2c78b, type: 2}
+  - {fileID: 114607896197372896, guid: 8c1455cf735fc4fa1aa8620cc4dbe54c, type: 2}
 --- !u!1 &917024132
 GameObject:
   m_ObjectHideFlags: 0

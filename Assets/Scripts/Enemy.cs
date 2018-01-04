@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float invulnerableFrames;
     
-    public int EnemyIndex;
+    public int EnemyIndex { get; set; }
 
     public event EventHandler<EnemyDestroyedEventArgs> EnemyDestroyed;
 
