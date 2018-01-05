@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField]
     private PlayerSword lightSword;
+
+    public bool Attacking { get { return heavySword.IsSwinging || lightSword.IsSwinging; } }
     
     private void Update()
     {

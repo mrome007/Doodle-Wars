@@ -234,6 +234,11 @@ Prefab:
       propertyPath: rightConstraint
       value: 
       objectReference: {fileID: 964147691}
+    - target: {fileID: 114966381378593460, guid: 7b3500b8eef85474b803891af344ee8b,
+        type: 2}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b3500b8eef85474b803891af344ee8b, type: 2}
   m_IsPrefabParent: 0

@@ -23,25 +23,27 @@ public class PlayerMovement : MonoBehaviour
     private float minY;
     private float maxX;
     private float maxY;
-    private bool isJumping;
-    private float jumpAcceleration = 4.4f;
+    private bool isDashing;
+    private float dashSpeed = 1f;
+    private float dashDuration = 0.25f;
 
     private void Awake()
     {
         movementVector = Vector2.zero;
         clampedPosition = Vector2.zero;
         rotationVector = Vector3.zero;
-        isJumping = false;
+        isDashing = false;
     }
 
 	private void Update()
 	{
         var h = Input.GetAxis("Horizontal");
-        if(Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        if(Input.GetKeyDown(KeyCode.Space) && !isDashing)
         {
-            PlayerJump();
+            PlayerDash();
         }
         movementVector.x = h;
+        movementVector.x *= dashSpeed;
         transform.Translate(movementVector * Time.deltaTime * speed);
         ClampMovement();
         RotatePlayer(h);
@@ -72,28 +74,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void PlayerJump()
+    private void PlayerDash()
     {
-        StartCoroutine(JumpRoutine());
+        StartCoroutine(DashRoutine());
     }
 
-    private IEnumerator JumpRoutine()
+    private IEnumerator DashRoutine()
     {
-        movementVector.y = 0.5f;
-        isJumping = true;
-        while(transform.position.y < 1.5f)
-        {
-            movementVector.y = movementVector.y + jumpAcceleration * Time.deltaTime;
-            yield return null;
-        }
-        movementVector.y = 1.5f;
-        while(transform.position.y > 0f)
-        {
-            movementVector.y = movementVector.y - jumpAcceleration * Time.deltaTime;
-            yield return null;
-        }
+        isDashing = true;
+        dashSpeed = 5f;
 
-        isJumping = false;
+        yield return new WaitForSeconds(dashDuration);
+
+        dashSpeed = 1f;
+        isDashing = false;
     }
 
 }
