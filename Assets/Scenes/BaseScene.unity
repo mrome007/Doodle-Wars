@@ -1457,6 +1457,7 @@ MonoBehaviour:
   - {fileID: 114170907795190432, guid: c8dc8ff3ded874a9582e71f67a6cf223, type: 2}
   - {fileID: 114896318972587454, guid: bb05b3dd4cbe14d099038e45aaf2cb86, type: 2}
   - {fileID: 114607896197372896, guid: 8c1455cf735fc4fa1aa8620cc4dbe54c, type: 2}
+  bossObject: {fileID: 0}
 --- !u!1 &917024132
 GameObject:
   m_ObjectHideFlags: 0
