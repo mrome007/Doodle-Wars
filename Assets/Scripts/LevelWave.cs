@@ -9,10 +9,22 @@ public class LevelWave : MonoBehaviour
     private bool bossRound;
 
     [SerializeField]
+    private bool randomEnemies;
+
+    [SerializeField]
+    private bool hasDirection;
+
+    [SerializeField]
+    private bool left;
+
+    [SerializeField]
     private Transform leftConstraint;
 
     [SerializeField]
     private Transform rightConstraint;
+
+    [SerializeField]
+    private EnemySpawner.EnemyType enemyType;
 
     [SerializeField]
     private int numberOfEnemies;
@@ -55,7 +67,36 @@ public class LevelWave : MonoBehaviour
             handler(this, null);
         }
 
-        enemyList = EnemySpawner.Instance.SpawnEnemies(numberOfEnemies, leftConstraint.position.x, rightConstraint.position.x);
+        if(bossRound)
+        {
+            enemyList = EnemySpawner.Instance.SpawnBoss(rightConstraint.position.x);
+        }
+        else
+        {
+            if(randomEnemies)
+            {
+                if(hasDirection)
+                {
+                    enemyList = EnemySpawner.Instance.SpawnRandomEnemies(numberOfEnemies, left, left ? leftConstraint.position.x : rightConstraint.position.x);
+                }
+                else
+                {
+                    enemyList = EnemySpawner.Instance.SpawnRandomEnemies(numberOfEnemies, leftConstraint.position.x, rightConstraint.position.x);
+                }
+            }
+            else
+            {
+                if(hasDirection)
+                {
+                    enemyList = EnemySpawner.Instance.SpawnSpecificEnemies(enemyType, numberOfEnemies, left, left ? leftConstraint.position.x : rightConstraint.position.x);
+                }
+                else
+                {
+                    enemyList = EnemySpawner.Instance.SpawnSpecificEnemies(enemyType, numberOfEnemies, leftConstraint.position.x, rightConstraint.position.x);
+                }
+            }
+        }
+
         currentNumberOfEnemies = enemyList.Count;
         for(int index = 0; index < enemyList.Count; index++)
         {

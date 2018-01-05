@@ -20,9 +20,7 @@ public class EnemyMovement : MonoBehaviour
     {
         offset = Random.Range(0.1f, 0.3f);
         negOffset *= -1f;
-        delayMovement = Random.Range(0f, 1.5f);
         Move = false;
-        Invoke("DelayMove", delayMovement);
     }
 
     private void Update()
@@ -54,7 +52,12 @@ public class EnemyMovement : MonoBehaviour
         transform.Translate(movementDirection * speed * Time.deltaTime);
     }
 
-    private void DelayMove()
+    public void DelayMove(float delay)
+    {
+        Invoke("GoEnemy", delay);
+    }
+
+    private void GoEnemy()
     {
         Move = true;
     }

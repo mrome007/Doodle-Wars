@@ -51,10 +51,8 @@ public class Enemy : MonoBehaviour
         enemyMovement.Move = false;
         enemyCollider.enabled = false;
         enemyAnimator.SetTrigger("Hit");
-        for(int index = 0; index < invulnerableFrames; index++)
-        {
-            yield return null;
-        }
+
+        yield return new WaitForSeconds(2f);
         enemyMovement.Move = true;
         enemyCollider.enabled = true;
     }
@@ -64,5 +62,10 @@ public class Enemy : MonoBehaviour
         enemyMovement.Move = false;
         enemyCollider.enabled = false;
         Destroy(gameObject, 1f);
+    }
+
+    public void EnemyMove(float delay)
+    {
+        enemyMovement.DelayMove(delay);
     }
 }

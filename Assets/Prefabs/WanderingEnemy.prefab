@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9478af5b657c24c928b1d33a094e2d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.75
+  speed: 3.25
   enemyContainerTransform: {fileID: 4199785420347294}
 --- !u!114 &114607896197372896
 MonoBehaviour:
