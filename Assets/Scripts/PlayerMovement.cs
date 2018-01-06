@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform playerTransform;
 
+    private Collider2D playerCollider;
     private Vector2 movementVector;
     private Vector2 clampedPosition;
     private Vector3 rotationVector;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing;
     private float dashSpeed = 1f;
     private float dashDuration = 0.25f;
+    private Coroutine dashRoutine = null;
 
     private void Awake()
     {
@@ -33,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         clampedPosition = Vector2.zero;
         rotationVector = Vector3.zero;
         isDashing = false;
+        playerCollider = GetComponent<Collider2D>();
     }
 
 	private void Update()
@@ -76,18 +79,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerDash()
     {
-        StartCoroutine(DashRoutine());
+        dashRoutine = StartCoroutine(DashRoutine());
     }
 
     private IEnumerator DashRoutine()
     {
         isDashing = true;
         dashSpeed = 5f;
+        playerCollider.enabled = false;
 
         yield return new WaitForSeconds(dashDuration);
 
+        playerCollider.enabled = true;
         dashSpeed = 1f;
         isDashing = false;
+    }
+
+    private void OnDestroy()
+    {
+        if(dashRoutine != null)
+        {
+            StopCoroutine(dashRoutine);
+        }
     }
 
 }

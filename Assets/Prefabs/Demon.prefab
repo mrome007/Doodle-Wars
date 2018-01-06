@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2dada46c028f4f378c779eacaca4a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 90
   invulnerableFrames: 60
 --- !u!212 &212527501325368604
 SpriteRenderer:

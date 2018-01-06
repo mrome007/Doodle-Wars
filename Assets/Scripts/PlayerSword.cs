@@ -12,6 +12,9 @@ public class PlayerSword : MonoBehaviour
 
     [SerializeField]
     private string swingTrigger;
+
+    [SerializeField]
+    private PlayerCollision playerCollision;
     
     public bool IsSwinging { get; private set; }
 
@@ -35,6 +38,8 @@ public class PlayerSword : MonoBehaviour
         {
             var enemy = other.GetComponent<Enemy>();
             enemy.ApplyDamage(damage);
+
+            playerCollision.IncreaseHealth(1f);
         }
     }
 

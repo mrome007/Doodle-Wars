@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     private EnemyMovement enemyMovement;
     private Collider2D enemyCollider;
     private Animator enemyAnimator;
+    private Coroutine takeDamageRoutine = null;
 
     private void Awake()
     {
@@ -28,6 +29,11 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
+        if(takeDamageRoutine != null)
+        {
+            StopCoroutine(takeDamageRoutine);
+        }
+        
         var handler = EnemyDestroyed;
         if(handler != null)
         {
@@ -37,7 +43,7 @@ public class Enemy : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-        StartCoroutine(DisplayTakingDamage());
+        takeDamageRoutine = StartCoroutine(DisplayTakingDamage());
         health -= damage;
 
         if(health <= 0f)

@@ -234,15 +234,6 @@ Prefab:
       propertyPath: rightConstraint
       value: 
       objectReference: {fileID: 964147691}
-    - target: {fileID: 114966381378593460, guid: 7b3500b8eef85474b803891af344ee8b,
-        type: 2}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1247279218537112, guid: 7b3500b8eef85474b803891af344ee8b, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b3500b8eef85474b803891af344ee8b, type: 2}
   m_IsPrefabParent: 0
@@ -1240,7 +1231,7 @@ Prefab:
     - target: {fileID: 114744121100511926, guid: 6f3ec0abfabd24c7c835f3c117f0e148,
         type: 2}
       propertyPath: numberOfEnemies
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4140184386251248, guid: 6f3ec0abfabd24c7c835f3c117f0e148, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2132,7 +2123,7 @@ Prefab:
     - target: {fileID: 114744121100511926, guid: 6f3ec0abfabd24c7c835f3c117f0e148,
         type: 2}
       propertyPath: numberOfEnemies
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4140184386251248, guid: 6f3ec0abfabd24c7c835f3c117f0e148, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2292,7 +2283,7 @@ Prefab:
     - target: {fileID: 114744121100511926, guid: 6f3ec0abfabd24c7c835f3c117f0e148,
         type: 2}
       propertyPath: numberOfEnemies
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114744121100511926, guid: 6f3ec0abfabd24c7c835f3c117f0e148,
         type: 2}
@@ -2369,7 +2360,7 @@ Prefab:
     - target: {fileID: 114744121100511926, guid: 6f3ec0abfabd24c7c835f3c117f0e148,
         type: 2}
       propertyPath: numberOfEnemies
-      value: 16
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4140184386251248, guid: 6f3ec0abfabd24c7c835f3c117f0e148, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2531,7 +2522,7 @@ Prefab:
     - target: {fileID: 114744121100511926, guid: 6f3ec0abfabd24c7c835f3c117f0e148,
         type: 2}
       propertyPath: numberOfEnemies
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4140184386251248, guid: 6f3ec0abfabd24c7c835f3c117f0e148, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3048,7 +3039,7 @@ Prefab:
     - target: {fileID: 114744121100511926, guid: 6f3ec0abfabd24c7c835f3c117f0e148,
         type: 2}
       propertyPath: numberOfEnemies
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4140184386251248, guid: 6f3ec0abfabd24c7c835f3c117f0e148, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3468,7 +3459,7 @@ Prefab:
     - target: {fileID: 114744121100511926, guid: 6f3ec0abfabd24c7c835f3c117f0e148,
         type: 2}
       propertyPath: numberOfEnemies
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4587472545271914, guid: 6f3ec0abfabd24c7c835f3c117f0e148, type: 2}
       propertyPath: m_LocalPosition.x

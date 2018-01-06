@@ -57,6 +57,11 @@ public class LevelProgression : MonoBehaviour
 
     private void OnDestroy()
     {
+        if(moveleftConstraintCoroutine != null)
+        {
+            StopCoroutine(moveleftConstraintCoroutine);
+        }
+
         for(int index = 0; index < levelWaves.Count; index++)
         {
             levelWaves[index].WaveBegin -= HandleWaveBegin;
