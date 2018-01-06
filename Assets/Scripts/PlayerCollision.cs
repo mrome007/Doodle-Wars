@@ -14,12 +14,12 @@ public class PlayerCollision : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            DecreaseHealth(4f);
+            DecreaseHealth(3f);
         }
 
         if(other.tag == "Boss")
         {
-
+            DecreaseHealth(10f);
         }
     }
 
@@ -32,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
 
         if(other.tag == "Boss")
         {
-
+            DecreaseHealth(2f);
         }
     }
 

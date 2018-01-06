@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     private void Awake()
     {
         offset = Random.Range(0.1f, 0.3f);
-        negOffset *= -1f;
+        negOffset = offset * -1f;
         Move = false;
     }
 

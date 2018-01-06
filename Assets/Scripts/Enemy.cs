@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
         enemyAnimator = GetComponent<Animator>();
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         if(takeDamageRoutine != null)
         {

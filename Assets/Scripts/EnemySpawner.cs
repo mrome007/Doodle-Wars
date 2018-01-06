@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     private List<Enemy> enemyObjects;
 
     [SerializeField]
-    private Enemy bossObject;
+    private OctoBubbleBoss bossObject;
 
     private float spawnPosOffset = 10f;
 
@@ -124,13 +124,8 @@ public class EnemySpawner : MonoBehaviour
         return enemies;
     }
 
-    public List<Enemy> SpawnBoss(float position)
+    public void SpawnBoss(float position)
     {
-        var enemies = new List<Enemy>();
-        var enemy = Instantiate(bossObject, new Vector3(position, 0f, 0f), Quaternion.identity);
-        enemy.EnemyIndex = 0;
-        enemy.EnemyMove(0f);
-        enemies.Add(enemy);
-        return enemies;
+        Instantiate(bossObject, new Vector3(position, 0f, 0f), Quaternion.identity);
     }
 }

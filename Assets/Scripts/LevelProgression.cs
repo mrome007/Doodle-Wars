@@ -40,6 +40,7 @@ public class LevelProgression : MonoBehaviour
         if(currentWave >= levelWaves.Count)
         {
             Debug.Log("Waves HAVE ENDED");
+            EnemySpawner.Instance.SpawnBoss(rightWorldConstraint.position.x);
             return;
         }
 

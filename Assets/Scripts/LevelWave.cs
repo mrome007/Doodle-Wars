@@ -69,7 +69,7 @@ public class LevelWave : MonoBehaviour
 
         if(bossRound)
         {
-            enemyList = EnemySpawner.Instance.SpawnBoss(rightConstraint.position.x);
+            //enemyList = EnemySpawner.Instance.SpawnBoss(rightConstraint.position.x);
         }
         else
         {
