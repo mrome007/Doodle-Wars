@@ -14,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            DecreaseHealth(4f);
+            DecreaseHealth(5f);
         }
 
         if(other.tag == "Boss")
