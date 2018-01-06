@@ -14,7 +14,20 @@ public class PlayerCollision : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            DecreaseHealth(5f);
+            DecreaseHealth(4f);
+        }
+
+        if(other.tag == "Boss")
+        {
+
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.tag == "Enemy")
+        {
+            DecreaseHealth(0.1f);
         }
 
         if(other.tag == "Boss")
